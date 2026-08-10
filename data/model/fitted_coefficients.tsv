@@ -1,0 +1,15 @@
+feature	standardized_coefficient
+combined_score	0.36618740341888373
+neighborhood	0.5015503136646805
+neighborhood_transferred	0.03134552393273721
+fusion	0.12745521210941904
+cooccurence	0.6160842477634498
+homology	0.20640100889380808
+coexpression	0.05823716380729186
+coexpression_transferred	-0.08252880340692975
+experiments	0.14866466739457943
+experiments_transferred	-0.046145792530575214
+database	0.03281203995315804
+database_transferred	-0.20150559206029525
+textmining	-0.0697481250522955
+textmining_transferred	-0.05028166198809727

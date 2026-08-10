@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/duf_string_af3.egg-info/PKG-INFO
+src/duf_string_af3.egg-info/SOURCES.txt
+src/duf_string_af3.egg-info/dependency_links.txt
+src/duf_string_af3.egg-info/requires.txt
+src/duf_string_af3.egg-info/top_level.txt
+src/dufppi/__init__.py
+src/dufppi/figures.py
+src/dufppi/model.py

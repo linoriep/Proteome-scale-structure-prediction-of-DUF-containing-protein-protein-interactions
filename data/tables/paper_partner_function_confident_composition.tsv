@@ -1,0 +1,73 @@
+confidence_subset	cohort	partner_function_class	n_pairs	subset_total	fraction_within_subset
+Liberal confidence	STRING >=900, taxa >=10	metabolism / enzyme	100	614	0.16286644951140064
+Liberal confidence	STRING >=900, taxa >=10	transport / membrane	171	614	0.2785016286644951
+Liberal confidence	STRING >=900, taxa >=10	translation / RNA	26	614	0.04234527687296417
+Liberal confidence	STRING >=900, taxa >=10	DNA / chromosome	62	614	0.10097719869706841
+Liberal confidence	STRING >=900, taxa >=10	cell envelope / division	21	614	0.03420195439739414
+Liberal confidence	STRING >=900, taxa >=10	regulation / signaling	18	614	0.029315960912052116
+Liberal confidence	STRING >=900, taxa >=10	stress / defense	14	614	0.02280130293159609
+Liberal confidence	STRING >=900, taxa >=10	unknown-function protein	86	614	0.14006514657980457
+Liberal confidence	STRING >=900, taxa >=10	other / unclear	116	614	0.18892508143322476
+Liberal confidence	STRING >=700, taxa >=50	metabolism / enzyme	51	385	0.13246753246753246
+Liberal confidence	STRING >=700, taxa >=50	transport / membrane	84	385	0.21818181818181817
+Liberal confidence	STRING >=700, taxa >=50	translation / RNA	16	385	0.04155844155844156
+Liberal confidence	STRING >=700, taxa >=50	DNA / chromosome	31	385	0.08051948051948052
+Liberal confidence	STRING >=700, taxa >=50	cell envelope / division	16	385	0.04155844155844156
+Liberal confidence	STRING >=700, taxa >=50	regulation / signaling	19	385	0.04935064935064935
+Liberal confidence	STRING >=700, taxa >=50	stress / defense	6	385	0.015584415584415584
+Liberal confidence	STRING >=700, taxa >=50	unknown-function protein	45	385	0.11688311688311688
+Liberal confidence	STRING >=700, taxa >=50	other / unclear	117	385	0.3038961038961039
+Liberal confidence	Fusion-supported	metabolism / enzyme	30	120	0.25
+Liberal confidence	Fusion-supported	transport / membrane	31	120	0.25833333333333336
+Liberal confidence	Fusion-supported	translation / RNA	1	120	0.008333333333333333
+Liberal confidence	Fusion-supported	DNA / chromosome	23	120	0.19166666666666668
+Liberal confidence	Fusion-supported	cell envelope / division	4	120	0.03333333333333333
+Liberal confidence	Fusion-supported	regulation / signaling	3	120	0.025
+Liberal confidence	Fusion-supported	stress / defense	2	120	0.016666666666666666
+Liberal confidence	Fusion-supported	unknown-function protein	4	120	0.03333333333333333
+Liberal confidence	Fusion-supported	other / unclear	22	120	0.18333333333333332
+Liberal confidence	L2 model	metabolism / enzyme	295	2433	0.12124948623099055
+Liberal confidence	L2 model	transport / membrane	505	2433	0.2075626798191533
+Liberal confidence	L2 model	translation / RNA	107	2433	0.04397862720920674
+Liberal confidence	L2 model	DNA / chromosome	209	2433	0.08590217838060009
+Liberal confidence	L2 model	cell envelope / division	70	2433	0.02877106452938759
+Liberal confidence	L2 model	regulation / signaling	36	2433	0.014796547472256474
+Liberal confidence	L2 model	stress / defense	37	2433	0.015207562679819153
+Liberal confidence	L2 model	unknown-function protein	89	2433	0.0365803534730785
+Liberal confidence	L2 model	other / unclear	1085	2433	0.4459515002055076
+Strict confidence	STRING >=900, taxa >=10	metabolism / enzyme	58	325	0.17846153846153845
+Strict confidence	STRING >=900, taxa >=10	transport / membrane	93	325	0.28615384615384615
+Strict confidence	STRING >=900, taxa >=10	translation / RNA	14	325	0.043076923076923075
+Strict confidence	STRING >=900, taxa >=10	DNA / chromosome	31	325	0.09538461538461539
+Strict confidence	STRING >=900, taxa >=10	cell envelope / division	8	325	0.024615384615384615
+Strict confidence	STRING >=900, taxa >=10	regulation / signaling	9	325	0.027692307692307693
+Strict confidence	STRING >=900, taxa >=10	stress / defense	2	325	0.006153846153846154
+Strict confidence	STRING >=900, taxa >=10	unknown-function protein	54	325	0.16615384615384615
+Strict confidence	STRING >=900, taxa >=10	other / unclear	56	325	0.1723076923076923
+Strict confidence	STRING >=700, taxa >=50	metabolism / enzyme	27	194	0.13917525773195877
+Strict confidence	STRING >=700, taxa >=50	transport / membrane	42	194	0.21649484536082475
+Strict confidence	STRING >=700, taxa >=50	translation / RNA	7	194	0.03608247422680412
+Strict confidence	STRING >=700, taxa >=50	DNA / chromosome	21	194	0.10824742268041238
+Strict confidence	STRING >=700, taxa >=50	cell envelope / division	3	194	0.015463917525773196
+Strict confidence	STRING >=700, taxa >=50	regulation / signaling	10	194	0.05154639175257732
+Strict confidence	STRING >=700, taxa >=50	stress / defense	1	194	0.005154639175257732
+Strict confidence	STRING >=700, taxa >=50	unknown-function protein	26	194	0.13402061855670103
+Strict confidence	STRING >=700, taxa >=50	other / unclear	57	194	0.29381443298969073
+Strict confidence	Fusion-supported	metabolism / enzyme	15	59	0.2542372881355932
+Strict confidence	Fusion-supported	transport / membrane	11	59	0.1864406779661017
+Strict confidence	Fusion-supported	translation / RNA	1	59	0.01694915254237288
+Strict confidence	Fusion-supported	DNA / chromosome	13	59	0.22033898305084745
+Strict confidence	Fusion-supported	cell envelope / division	1	59	0.01694915254237288
+Strict confidence	Fusion-supported	regulation / signaling	1	59	0.01694915254237288
+Strict confidence	Fusion-supported	stress / defense	1	59	0.01694915254237288
+Strict confidence	Fusion-supported	unknown-function protein	3	59	0.05084745762711865
+Strict confidence	Fusion-supported	other / unclear	13	59	0.22033898305084745
+Strict confidence	L2 model	metabolism / enzyme	183	1208	0.15149006622516556
+Strict confidence	L2 model	transport / membrane	233	1208	0.19288079470198677
+Strict confidence	L2 model	translation / RNA	54	1208	0.04470198675496689
+Strict confidence	L2 model	DNA / chromosome	91	1208	0.07533112582781457
+Strict confidence	L2 model	cell envelope / division	28	1208	0.023178807947019868
+Strict confidence	L2 model	regulation / signaling	21	1208	0.0173841059602649
+Strict confidence	L2 model	stress / defense	14	1208	0.011589403973509934
+Strict confidence	L2 model	unknown-function protein	56	1208	0.046357615894039736
+Strict confidence	L2 model	other / unclear	528	1208	0.4370860927152318

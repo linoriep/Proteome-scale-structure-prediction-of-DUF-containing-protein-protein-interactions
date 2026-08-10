@@ -1,0 +1,3 @@
+model_score_cutoff	selected_architecture_modules	overlap_previous_final_modules	not_in_previous_final_modules	overlap_any_completed_af3_module	new_modules_requiring_af3_before_sequence_checks	unique_duf_families
+0.5	12902	10570	2332	10948	1954	2132
+0.75	4586	4205	381	4289	297	1262

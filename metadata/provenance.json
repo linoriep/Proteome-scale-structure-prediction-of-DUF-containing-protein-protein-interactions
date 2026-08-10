@@ -1,0 +1,15 @@
+{
+  "release_date": "2026-08-04",
+  "string_release": "12.0",
+  "pfam_release": "38.0",
+  "successful_prediction_rows": 22970,
+  "candidate_rows_including_technical_failures": 23048,
+  "cohort_counts": {
+    "Fusion-supported": 2135,
+    "L2 model": 12298,
+    "STRING >=700, taxa >=50": 4017,
+    "STRING >=900, taxa >=10": 4520
+  },
+  "structures_included": false,
+  "confidence_note": "L2 uses whole-complex mean pLDDT; comparison cohorts use their established interface-average pLDDT convention"
+}

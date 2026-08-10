@@ -1,0 +1,4 @@
+training_configuration	model_family	n_features	average_precision	auroc
+STRING900 only XGBoost on current features	xgboost	4	0.33288776353312555	0.7887581735292231
+STRING900 only XGBoost on all STRING scores separately as features	xgboost	14	0.4001730192787729	0.8041988212285522
+STRING900 only L2 model on all STRING scores separately as features	l2	14	0.3715807912206607	0.80026965250991

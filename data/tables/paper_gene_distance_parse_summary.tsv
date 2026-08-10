@@ -1,0 +1,10 @@
+cohort	parse_status	n	fraction
+STRING >=900, taxa >=10	different contig/chromosome	3	0.000663716814159292
+STRING >=900, taxa >=10	same locus prefix	4517	0.9993362831858407
+STRING >=700, taxa >=50	different contig/chromosome	6	0.0014936519790888724
+STRING >=700, taxa >=50	same locus prefix	4011	0.9985063480209111
+Fusion-supported	different contig/chromosome	9	0.004215456674473068
+Fusion-supported	same locus prefix	2126	0.9957845433255269
+L2 model	different contig/chromosome	1134	0.09221011546592942
+L2 model	not locus-parsed	3400	0.27646771832818345
+L2 model	same locus prefix	7764	0.6313221662058871

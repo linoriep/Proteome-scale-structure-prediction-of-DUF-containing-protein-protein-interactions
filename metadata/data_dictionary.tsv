@@ -1,0 +1,26 @@
+table	column	definition	dtype
+all_successful_predictions.tsv.gz	cohort	Structural-prediction cohort	str
+all_successful_predictions.tsv.gz	prediction_name	Stable prediction identifier	str
+all_successful_predictions.tsv.gz	protein_pair_key	Canonical unordered STRING protein pair	str
+all_successful_predictions.tsv.gz	duf_protein_id	STRING identifier of the DUF-containing protein	str
+all_successful_predictions.tsv.gz	partner_protein_id	STRING identifier of the interaction partner	str
+all_successful_predictions.tsv.gz	duf_pfam_id	Pfam accession of the focal DUF	str
+all_successful_predictions.tsv.gz	duf_pfam_name	Pfam name of the focal DUF	str
+all_successful_predictions.tsv.gz	partner_architecture	Semicolon-separated Pfam architecture of the partner	str
+all_successful_predictions.tsv.gz	partner_function_class	Ordered keyword-based partner function category	str
+all_successful_predictions.tsv.gz	partner_annotation	Best available partner annotation	str
+all_successful_predictions.tsv.gz	partner_annotation_source	Source used for the partner annotation	str
+all_successful_predictions.tsv.gz	partner_annotation_is_unknown	See generating code and source-table documentation	bool
+all_successful_predictions.tsv.gz	taxid	NCBI taxonomy identifier	float64
+all_successful_predictions.tsv.gz	string_combined_score	STRING v12 combined association score	float64
+all_successful_predictions.tsv.gz	n_taxa	Organisms containing the corresponding module	int64
+all_successful_predictions.tsv.gz	model_score	Class-weighted L2 enrichment score; not a calibrated probability	float64
+all_successful_predictions.tsv.gz	interface_ipSAE	AlphaJudge interface ipSAE	float64
+all_successful_predictions.tsv.gz	interface_average_plddt	Mean pLDDT of interface residues	float64
+all_successful_predictions.tsv.gz	model_average_plddt	Residue-weighted whole-complex mean pLDDT	float64
+all_successful_predictions.tsv.gz	model_available	Whether a structure model was successfully generated	bool
+all_successful_predictions.tsv.gz	interface_scored	Whether interface confidence metrics were available	bool
+all_successful_predictions.tsv.gz	liberal_high_confidence	ipSAE >=0.2 and applicable pLDDT >=70	bool
+all_successful_predictions.tsv.gz	strict_high_confidence	ipSAE >=0.6 and applicable pLDDT >=70	bool
+all_successful_predictions.tsv.gz	duf_domain_interacting	Whether the mapped DUF met the domain buried-surface criterion	bool
+all_successful_predictions.tsv.gz	outcome	Combined structural-confidence category	str

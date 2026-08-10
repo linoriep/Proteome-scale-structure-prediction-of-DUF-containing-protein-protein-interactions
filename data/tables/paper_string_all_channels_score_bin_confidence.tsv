@@ -1,0 +1,155 @@
+score_bin	n	liberal	liberal_fraction	channel	source_column
+0-99	0	0		Combined	max_combined
+100-199	0	0		Combined	max_combined
+200-299	0	0		Combined	max_combined
+300-399	0	0		Combined	max_combined
+400-499	0	0		Combined	max_combined
+500-599	0	0		Combined	max_combined
+600-699	0	0		Combined	max_combined
+700-799	0	0		Combined	max_combined
+800-899	0	0		Combined	max_combined
+900-949	4107	639	0.1555880204528853	Combined	max_combined
+950-1000	8191	1794	0.21902087657184716	Combined	max_combined
+0-99	3312	433	0.1307367149758454	Neighborhood	max_neighborhood
+100-199	26	1	0.038461538461538464	Neighborhood	max_neighborhood
+200-299	41	6	0.14634146341463414	Neighborhood	max_neighborhood
+300-399	67	9	0.13432835820895522	Neighborhood	max_neighborhood
+400-499	119	22	0.18487394957983194	Neighborhood	max_neighborhood
+500-599	338	66	0.1952662721893491	Neighborhood	max_neighborhood
+600-699	672	108	0.16071428571428573	Neighborhood	max_neighborhood
+700-799	7723	1788	0.2315162501618542	Neighborhood	max_neighborhood
+800-899	0	0		Neighborhood	max_neighborhood
+900-949	0	0		Neighborhood	max_neighborhood
+950-1000	0	0		Neighborhood	max_neighborhood
+0-99	3005	650	0.21630615640599002	Neighborhood transferred	max_neighborhood_transferred
+100-199	2792	529	0.18946991404011462	Neighborhood transferred	max_neighborhood_transferred
+200-299	2049	328	0.1600780868716447	Neighborhood transferred	max_neighborhood_transferred
+300-399	1418	293	0.2066290550070522	Neighborhood transferred	max_neighborhood_transferred
+400-499	1114	238	0.21364452423698385	Neighborhood transferred	max_neighborhood_transferred
+500-599	1308	261	0.19954128440366972	Neighborhood transferred	max_neighborhood_transferred
+600-699	317	77	0.24290220820189273	Neighborhood transferred	max_neighborhood_transferred
+700-799	109	28	0.25688073394495414	Neighborhood transferred	max_neighborhood_transferred
+800-899	107	24	0.22429906542056074	Neighborhood transferred	max_neighborhood_transferred
+900-949	39	3	0.07692307692307693	Neighborhood transferred	max_neighborhood_transferred
+950-1000	40	2	0.05	Neighborhood transferred	max_neighborhood_transferred
+0-99	9929	1700	0.1712156309799577	Fusion	max_fusion
+100-199	171	30	0.17543859649122806	Fusion	max_fusion
+200-299	97	23	0.23711340206185566	Fusion	max_fusion
+300-399	97	18	0.18556701030927836	Fusion	max_fusion
+400-499	96	25	0.2604166666666667	Fusion	max_fusion
+500-599	156	33	0.21153846153846154	Fusion	max_fusion
+600-699	245	46	0.18775510204081633	Fusion	max_fusion
+700-799	226	59	0.2610619469026549	Fusion	max_fusion
+800-899	707	238	0.33663366336633666	Fusion	max_fusion
+900-949	574	261	0.4547038327526132	Fusion	max_fusion
+950-1000	0	0		Fusion	max_fusion
+0-99	1421	168	0.11822660098522167	Phyletic co-occurrence	max_cooccurence
+100-199	393	40	0.10178117048346055	Phyletic co-occurrence	max_cooccurence
+200-299	679	88	0.12960235640648013	Phyletic co-occurrence	max_cooccurence
+300-399	715	104	0.14545454545454545	Phyletic co-occurrence	max_cooccurence
+400-499	266	34	0.12781954887218044	Phyletic co-occurrence	max_cooccurence
+500-599	431	70	0.16241299303944315	Phyletic co-occurrence	max_cooccurence
+600-699	731	81	0.11080711354309165	Phyletic co-occurrence	max_cooccurence
+700-799	7662	1848	0.24119028974158183	Phyletic co-occurrence	max_cooccurence
+800-899	0	0		Phyletic co-occurrence	max_cooccurence
+900-949	0	0		Phyletic co-occurrence	max_cooccurence
+950-1000	0	0		Phyletic co-occurrence	max_cooccurence
+0-99	9625	1965	0.20415584415584415	Homology	max_homology
+100-199	0	0		Homology	max_homology
+200-299	0	0		Homology	max_homology
+300-399	0	0		Homology	max_homology
+400-499	0	0		Homology	max_homology
+500-599	107	10	0.09345794392523364	Homology	max_homology
+600-699	1626	243	0.14944649446494465	Homology	max_homology
+700-799	289	56	0.19377162629757785	Homology	max_homology
+800-899	252	57	0.2261904761904762	Homology	max_homology
+900-949	139	32	0.2302158273381295	Homology	max_homology
+950-1000	260	70	0.2692307692307692	Homology	max_homology
+0-99	10376	2065	0.19901696222050885	Coexpression	max_coexpression
+100-199	603	105	0.17412935323383086	Coexpression	max_coexpression
+200-299	279	53	0.18996415770609318	Coexpression	max_coexpression
+300-399	165	43	0.2606060606060606	Coexpression	max_coexpression
+400-499	166	29	0.1746987951807229	Coexpression	max_coexpression
+500-599	80	18	0.225	Coexpression	max_coexpression
+600-699	133	18	0.13533834586466165	Coexpression	max_coexpression
+700-799	170	38	0.2235294117647059	Coexpression	max_coexpression
+800-899	181	44	0.2430939226519337	Coexpression	max_coexpression
+900-949	74	13	0.17567567567567569	Coexpression	max_coexpression
+950-1000	71	7	0.09859154929577464	Coexpression	max_coexpression
+0-99	7906	1656	0.20946116873260814	Coexpression transferred	max_coexpression_transferred
+100-199	1054	180	0.17077798861480076	Coexpression transferred	max_coexpression_transferred
+200-299	552	106	0.19202898550724637	Coexpression transferred	max_coexpression_transferred
+300-399	489	92	0.18813905930470348	Coexpression transferred	max_coexpression_transferred
+400-499	324	74	0.22839506172839505	Coexpression transferred	max_coexpression_transferred
+500-599	320	62	0.19375	Coexpression transferred	max_coexpression_transferred
+600-699	373	56	0.15013404825737264	Coexpression transferred	max_coexpression_transferred
+700-799	377	64	0.16976127320954906	Coexpression transferred	max_coexpression_transferred
+800-899	514	86	0.16731517509727625	Coexpression transferred	max_coexpression_transferred
+900-949	167	29	0.17365269461077845	Coexpression transferred	max_coexpression_transferred
+950-1000	222	28	0.12612612612612611	Coexpression transferred	max_coexpression_transferred
+0-99	11165	2298	0.2058217644424541	Experiments	max_experiments
+100-199	8	3	0.375	Experiments	max_experiments
+200-299	28	1	0.03571428571428571	Experiments	max_experiments
+300-399	22	7	0.3181818181818182	Experiments	max_experiments
+400-499	33	3	0.09090909090909091	Experiments	max_experiments
+500-599	71	7	0.09859154929577464	Experiments	max_experiments
+600-699	78	5	0.0641025641025641	Experiments	max_experiments
+700-799	117	15	0.1282051282051282	Experiments	max_experiments
+800-899	454	26	0.05726872246696035	Experiments	max_experiments
+900-949	133	33	0.24812030075187969	Experiments	max_experiments
+950-1000	189	35	0.18518518518518517	Experiments	max_experiments
+0-99	8044	1782	0.221531576330184	Experiments transferred	max_experiments_transferred
+100-199	320	71	0.221875	Experiments transferred	max_experiments_transferred
+200-299	146	23	0.15753424657534246	Experiments transferred	max_experiments_transferred
+300-399	183	37	0.20218579234972678	Experiments transferred	max_experiments_transferred
+400-499	148	28	0.1891891891891892	Experiments transferred	max_experiments_transferred
+500-599	143	17	0.11888111888111888	Experiments transferred	max_experiments_transferred
+600-699	182	30	0.16483516483516483	Experiments transferred	max_experiments_transferred
+700-799	313	50	0.1597444089456869	Experiments transferred	max_experiments_transferred
+800-899	800	118	0.1475	Experiments transferred	max_experiments_transferred
+900-949	758	96	0.1266490765171504	Experiments transferred	max_experiments_transferred
+950-1000	1261	181	0.14353687549563837	Experiments transferred	max_experiments_transferred
+0-99	10959	2225	0.20302947349210695	Database	max_database
+100-199	0	0		Database	max_database
+200-299	0	0		Database	max_database
+300-399	103	14	0.13592233009708737	Database	max_database
+400-499	15	1	0.06666666666666667	Database	max_database
+500-599	151	8	0.052980132450331126	Database	max_database
+600-699	7	1	0.14285714285714285	Database	max_database
+700-799	48	7	0.14583333333333334	Database	max_database
+800-899	59	9	0.15254237288135594	Database	max_database
+900-949	956	168	0.17573221757322174	Database	max_database
+950-1000	0	0		Database	max_database
+0-99	8310	1812	0.21805054151624548	Database transferred	max_database_transferred
+100-199	158	33	0.2088607594936709	Database transferred	max_database_transferred
+200-299	163	31	0.1901840490797546	Database transferred	max_database_transferred
+300-399	154	34	0.22077922077922077	Database transferred	max_database_transferred
+400-499	157	26	0.16560509554140126	Database transferred	max_database_transferred
+500-599	216	33	0.1527777777777778	Database transferred	max_database_transferred
+600-699	498	81	0.16265060240963855	Database transferred	max_database_transferred
+700-799	758	108	0.1424802110817942	Database transferred	max_database_transferred
+800-899	1055	145	0.13744075829383887	Database transferred	max_database_transferred
+900-949	459	75	0.16339869281045752	Database transferred	max_database_transferred
+950-1000	370	55	0.14864864864864866	Database transferred	max_database_transferred
+0-99	10205	2085	0.20431161195492406	Text mining	max_textmining
+100-199	121	4	0.03305785123966942	Text mining	max_textmining
+200-299	107	14	0.1308411214953271	Text mining	max_textmining
+300-399	153	20	0.13071895424836602	Text mining	max_textmining
+400-499	150	16	0.10666666666666667	Text mining	max_textmining
+500-599	190	31	0.1631578947368421	Text mining	max_textmining
+600-699	225	40	0.17777777777777778	Text mining	max_textmining
+700-799	280	54	0.19285714285714287	Text mining	max_textmining
+800-899	422	75	0.17772511848341233	Text mining	max_textmining
+900-949	182	29	0.15934065934065933	Text mining	max_textmining
+950-1000	263	65	0.24714828897338403	Text mining	max_textmining
+0-99	7018	1596	0.22741521801082928	Text mining transferred	max_textmining_transferred
+100-199	1238	242	0.19547657512116318	Text mining transferred	max_textmining_transferred
+200-299	903	150	0.16611295681063123	Text mining transferred	max_textmining_transferred
+300-399	977	133	0.13613101330603888	Text mining transferred	max_textmining_transferred
+400-499	920	123	0.13369565217391305	Text mining transferred	max_textmining_transferred
+500-599	439	61	0.13895216400911162	Text mining transferred	max_textmining_transferred
+600-699	291	28	0.09621993127147767	Text mining transferred	max_textmining_transferred
+700-799	232	42	0.1810344827586207	Text mining transferred	max_textmining_transferred
+800-899	184	33	0.1793478260869565	Text mining transferred	max_textmining_transferred
+900-949	62	16	0.25806451612903225	Text mining transferred	max_textmining_transferred
+950-1000	34	9	0.2647058823529412	Text mining transferred	max_textmining_transferred

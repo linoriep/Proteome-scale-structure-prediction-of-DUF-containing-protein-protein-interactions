@@ -1,0 +1,13 @@
+cohort	minimum_partners	duf_proteins	candidate_n	liberal_n	strict_n
+STRING >=900, taxa >=10	2	3194	491	11	2
+STRING >=900, taxa >=10	5	3194	74	0	0
+STRING >=900, taxa >=10	10	3194	24	0	0
+STRING >=700, taxa >=50	2	3046	412	8	2
+STRING >=700, taxa >=50	5	3046	56	0	0
+STRING >=700, taxa >=50	10	3046	17	0	0
+Fusion-supported	2	1630	215	0	0
+Fusion-supported	5	1630	44	0	0
+Fusion-supported	10	1630	5	0	0
+L2 model	2	6499	987	70	13
+L2 model	5	6499	153	9	0
+L2 model	10	6499	47	3	0

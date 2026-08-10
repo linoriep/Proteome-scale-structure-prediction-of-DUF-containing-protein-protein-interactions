@@ -1,0 +1,15 @@
+feature	display_name	composition	standardized_L2_coefficient
+combined_score	Combined STRING score	Combined association score.	0.3661874034188838
+neighborhood	Neighborhood	Gene-neighborhood evidence.	0.5015503136646802
+neighborhood_transferred	Neighborhood transferred	Transferred gene-neighborhood evidence.	0.031345523932737
+fusion	Fusion	Gene-fusion evidence.	0.1274552121094188
+cooccurence	Phyletic co-occurrence	Phyletic-profile co-occurrence evidence.	0.6160842477634504
+homology	Homology	Interactor homology score.	0.206401008893808
+coexpression	Coexpression	Direct coexpression evidence.	0.0582371638072919
+coexpression_transferred	Coexpression transferred	Transferred coexpression evidence.	-0.0825288034069297
+experiments	Experiments	Direct experimental evidence.	0.1486646673945795
+experiments_transferred	Experiments transferred	Transferred experimental evidence.	-0.0461457925305753
+database	Database	Direct curated-database evidence.	0.0328120399531582
+database_transferred	Database transferred	Transferred curated-database evidence.	-0.2015055920602949
+textmining	Text mining	Direct text-mining evidence.	-0.0697481250522955
+textmining_transferred	Text mining transferred	Transferred text-mining evidence.	-0.0502816619880974

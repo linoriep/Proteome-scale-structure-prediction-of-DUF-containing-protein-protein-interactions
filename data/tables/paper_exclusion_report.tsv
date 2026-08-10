@@ -1,0 +1,5 @@
+cohort	input_rows	after_source_filter	successful_structure_rows	unique_protein_pairs	source_or_viewer_rows_excluded	technical_failure_rows_excluded	duplicate_pair_annotation_rows
+STRING >=900, taxa >=10	4523	4523	4520	4520	0	3	0
+STRING >=700, taxa >=50	4017	4017	4017	4017	0	0	0
+Fusion-supported	2493	2135	2135	2135	358	0	0
+L2 model	12431	12431	12431	12298	0	0	133

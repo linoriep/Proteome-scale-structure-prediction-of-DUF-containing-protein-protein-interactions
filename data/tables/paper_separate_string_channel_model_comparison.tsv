@@ -1,0 +1,4 @@
+Training configuration	AP	AUROC
+STRING900 only XGBoost on current features	0.3329	0.7888
+STRING900 only XGBoost on all STRING scores separately as features	0.4002	0.8042
+STRING900 only L2 model on all STRING scores separately as features	0.3716	0.8003

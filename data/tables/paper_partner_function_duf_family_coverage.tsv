@@ -1,0 +1,10 @@
+partner_function_class	candidate_duf_families	liberal_interacting_duf_families	strict_interacting_duf_families
+metabolism / enzyme	735	124	77
+transport / membrane	742	184	98
+translation / RNA	219	35	20
+DNA / chromosome	393	68	40
+cell envelope / division	272	33	13
+regulation / signaling	141	22	14
+stress / defense	117	24	13
+unknown-function protein	243	71	47
+other / unclear	1507	393	256

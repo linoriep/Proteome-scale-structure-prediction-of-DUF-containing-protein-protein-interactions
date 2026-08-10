@@ -1,0 +1,25 @@
+cohort	partner_bin	n_duf_proteins
+STRING >=900, taxa >=10	0	2593
+STRING >=900, taxa >=10	1	590
+STRING >=900, taxa >=10	2	10
+STRING >=900, taxa >=10	3-4	1
+STRING >=900, taxa >=10	5-9	0
+STRING >=900, taxa >=10	>=10	0
+STRING >=700, taxa >=50	0	2671
+STRING >=700, taxa >=50	1	367
+STRING >=700, taxa >=50	2	7
+STRING >=700, taxa >=50	3-4	1
+STRING >=700, taxa >=50	5-9	0
+STRING >=700, taxa >=50	>=10	0
+Fusion-supported	0	1510
+Fusion-supported	1	120
+Fusion-supported	2	0
+Fusion-supported	3-4	0
+Fusion-supported	5-9	0
+Fusion-supported	>=10	0
+L2 model	0	4884
+L2 model	1	1545
+L2 model	2	46
+L2 model	3-4	15
+L2 model	5-9	6
+L2 model	>=10	3

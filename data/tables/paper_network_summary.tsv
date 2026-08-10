@@ -1,0 +1,8 @@
+network_quantity	n
+proteins	5176
+physical PPI edges	2672
+DUF-interacting edges	1593
+liberal edges outside mapped DUF	1079
+connected components	2506
+isolated two-protein components	2381
+components with >=3 proteins	125
