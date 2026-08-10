@@ -1,9 +1,4 @@
-# DUF-containing protein interaction screen
-
-This portable publication bundle contains the model implementation, source TSV
-tables, fitted model, prediction metadata, figure inputs, and code used to
-reproduce the final figures for the DUF-containing protein interaction study.
-The manuscript and AlphaFold structure files are deposited separately.
+# Proteome-scale structure prediction of DUF-containing protein-protein interactions
 
 ## Contents
 
@@ -31,9 +26,6 @@ pip install -e '.[notebooks]'
 ```bash
 python scripts/generate_figures.py --release-root .
 ```
-
-Raster figures are written at 500 DPI. The notebook provides the same entry
-point without embedding machine-specific paths or working-project commentary.
 
 ## Refit and apply the L2 model
 
