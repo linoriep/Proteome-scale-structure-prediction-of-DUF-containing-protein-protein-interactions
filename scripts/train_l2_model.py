@@ -5,6 +5,9 @@ import argparse
 import json
 from pathlib import Path
 
+import pandas as pd
+from sklearn.metrics import average_precision_score, roc_auc_score
+
 from dufppi.model import coefficient_table, cross_validate, fit_model, load_training_data, save_model
 
 
@@ -20,6 +23,25 @@ def main() -> None:
     oof = oof.rename(columns={"score": "l2_model_score"})
     oof.to_csv(root / "data/model/oof_predictions_reproduced.tsv.gz", sep="\t", index=False)
     folds.to_csv(root / "data/model/fold_metrics_reproduced.tsv", sep="\t", index=False)
+    baseline_scores = {
+        "L2 model": oof["l2_model_score"],
+        "Combined STRING score": features["combined_score"],
+        "Neighborhood score": features["neighborhood"],
+        "Co-occurrence score": features["cooccurence"],
+    }
+    baseline_metrics = pd.DataFrame(
+        [
+            {
+                "ranking": ranking,
+                "average_precision": average_precision_score(labels, score),
+                "auroc": roc_auc_score(labels, score),
+            }
+            for ranking, score in baseline_scores.items()
+        ]
+    )
+    baseline_metrics.to_csv(
+        root / "data/model/baseline_ranking_metrics_reproduced.tsv", sep="\t", index=False
+    )
     pipeline = fit_model(features, labels)
     save_model(pipeline, root / "data/model/l2_pipeline_reproduced.joblib")
     coefficient_table(pipeline).to_csv(root / "data/model/fitted_coefficients_reproduced.tsv", sep="\t", index=False)

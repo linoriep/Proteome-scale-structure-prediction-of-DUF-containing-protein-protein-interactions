@@ -25,7 +25,7 @@ FUNCTION_COLORS = dict(zip(FUNCTION_ORDER, ["#2A6F97", "#D17B24", "#6A994E", "#8
 
 def configure() -> None:
     plt.rcParams.update({
-        "figure.dpi": 120, "savefig.dpi": 500, "font.size": 9,
+        "figure.dpi": 120, "savefig.dpi": 600, "font.size": 9,
         "axes.titlesize": 10, "axes.labelsize": 9, "legend.fontsize": 8,
         "axes.spines.top": False, "axes.spines.right": False,
         "pdf.fonttype": 42, "svg.fonttype": "none",
@@ -85,14 +85,14 @@ def overview(root: Path) -> None:
     for offset, column, label, color in [(-width, "unique_duf_families", "Candidate", "#C8CDD2"), (0, "duf_families_with_liberal_member", "Liberal", LIBERAL), (width, "duf_families_with_strict_member", "Strict", STRICT)]:
         bars = axes[1].bar(x+offset, families[column], width, color=color, label=label)
         axes[1].bar_label(bars, rotation=90, padding=2, fontsize=6)
-    axes[1].set_xticks(x, labels, rotation=28, ha="right", fontsize=7); axes[1].set_ylabel("Distinct DUF families"); axes[1].set_title("B  DUF-family coverage", loc="left", fontweight="bold"); axes[1].legend(frameon=False, ncol=3)
+    axes[1].set_xticks(x, labels, rotation=28, ha="right", fontsize=7); axes[1].set_ylabel("Distinct DUF families"); axes[1].set_ylim(0, 3000); axes[1].set_title("B  DUF-family coverage", loc="left", fontweight="bold"); axes[1].legend(frameon=False, ncol=3, loc="upper center")
 
     bins = ["1-4", "5-9", "10-19", "20-49", "50-99", "100-249", "250-499", ">=500"]
     x = np.arange(len(bins))
     for cohort in ORDER:
         part = recurrence[recurrence.cohort.eq(cohort)].set_index("taxa_bin").reindex(bins)
         axes[2].plot(x, part.liberal_fraction, "o-", color=COLORS[cohort], label=SHORT[cohort])
-    axes[2].set_xticks(x, bins, rotation=25, ha="right"); axes[2].set_xlabel("Taxa per module"); axes[2].set_ylabel("Liberal-confidence fraction"); axes[2].yaxis.set_major_formatter(PercentFormatter(1)); axes[2].set_title("F  Yield by taxonomic recurrence", loc="left", fontweight="bold"); axes[2].legend(frameon=False, ncol=2, fontsize=6.5)
+    axes[2].set_xticks(x, bins, rotation=25, ha="right"); axes[2].set_xlabel("Taxa per module"); axes[2].set_ylabel("Liberal-confidence fraction"); axes[2].set_ylim(0, recurrence.liberal_fraction.max() * 1.45); axes[2].yaxis.set_major_formatter(PercentFormatter(1)); axes[2].set_title("F  Yield by taxonomic recurrence", loc="left", fontweight="bold"); axes[2].legend(frameon=False, ncol=2, fontsize=6.5, loc="upper center")
 
     partner_bins = ["0", "1", "2", "3-4", "5-9", ">=10"]
     matrix = multiplicity.pivot(index="partner_bin", columns="cohort", values="n_duf_proteins").reindex(index=partner_bins, columns=ORDER).fillna(0)
@@ -130,7 +130,8 @@ def locus_distance(root: Path) -> None:
                 ax.text(index+width/2, row.strict_fraction+.008, f"n={int(row.strict):,}/{int(row.n):,}", rotation=90, ha="center", va="bottom", fontsize=6)
         ax.set_xticks(x, [value.replace(" ", "\n") if value == "different replicon" else value for value in cohort_bins], rotation=28, ha="right"); ax.yaxis.set_major_formatter(PercentFormatter(1)); ax.set_title(SHORT[cohort], fontweight="bold"); ax.legend(frameon=False)
     axes[0, 0].set_ylabel("Fraction of successfully predicted pairs"); axes[1, 0].set_ylabel("Fraction of successfully predicted pairs")
-    fig.supxlabel("Absolute locus-tag index difference (gene-distance proxy)", y=.015); fig.tight_layout(rect=[0, .035, 1, 1])
+    fig.suptitle("Structural-confidence yield by locus-tag distance", fontweight="bold", fontsize=12)
+    fig.tight_layout(rect=[0, 0, 1, .96])
     save(fig, root / "figures", "figure_2_locus_distance")
 
 
@@ -140,12 +141,20 @@ def case_studies(root: Path) -> None:
         ("B", "Predicted DUF4130-radical-SAM\ncomplex with SAM", "B_duf4130_af3_prediction_sam.png"),
         ("C", "RecJ DNA exonuclease\n(PDB 5F55)", "C_duf4130_dna_binding_reference_5f55.png"),
         ("D", "Human GGCX-protein S complex\n(PDB 9L54)", "D_duf5819_ggcx_reference.png"),
-        ("E", "Predicted DUF5819-HTTM/DCC1-like\ncomplex with vitamin K", "E_duf5819_af3_prediction_vitamin_k.png"),
-        ("F", "Predicted vitamin K pocket and\nDUF5819 contacts", "F_duf5819_vitamin_k_pocket_closeup.png"),
+        ("E", "Predicted DUF5819-HTTM/DCC1-like\ncomplex with menaquinone-7", "E_duf5819_af3_prediction_vitamin_k.png"),
+        ("F", "Close-up of the binding pocket in superposed\nPDB 9L54 and predicted DUF5819 complex", "F_duf5819_vitamin_k_pocket_closeup.png"),
     ]
     fig, axes = plt.subplots(2, 3, figsize=(11.8, 8.0))
     for ax, (letter, title, filename) in zip(axes.ravel(), panels):
-        ax.imshow(plt.imread(root / "data/figure_sources" / filename)); ax.axis("off"); ax.text(0, 1.02, letter, transform=ax.transAxes, fontweight="bold", fontsize=12); ax.text(.08, 1.02, title, transform=ax.transAxes, va="bottom", fontweight="bold", fontsize=9)
+        heading_y = 1.12 if letter == "F" else 1.06
+        image = plt.imread(root / "data/figure_sources" / filename)
+        ax.imshow(image)
+        if letter in "ABC":
+            margin_x = image.shape[1] * .09
+            margin_y = image.shape[0] * .09
+            ax.set_xlim(-margin_x, image.shape[1] + margin_x)
+            ax.set_ylim(image.shape[0] + margin_y, -margin_y)
+        ax.axis("off"); ax.text(0, heading_y, letter, transform=ax.transAxes, va="top", fontweight="bold", fontsize=12); ax.text(.08, heading_y, title, transform=ax.transAxes, va="top", fontweight="bold", fontsize=9)
     fig.text(.01, .73, "DUF4130", rotation=90, fontweight="bold"); fig.text(.01, .27, "DUF5819", rotation=90, fontweight="bold"); fig.tight_layout(rect=[.02, 0, 1, 1])
     save(fig, root / "figures", "figure_3_case_studies")
 

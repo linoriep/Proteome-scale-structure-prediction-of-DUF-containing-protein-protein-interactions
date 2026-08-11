@@ -24,3 +24,29 @@ all_successful_predictions.tsv.gz	liberal_high_confidence	ipSAE >=0.2 and applic
 all_successful_predictions.tsv.gz	strict_high_confidence	ipSAE >=0.6 and applicable pLDDT >=70	bool
 all_successful_predictions.tsv.gz	duf_domain_interacting	Whether the mapped DUF met the domain buried-surface criterion	bool
 all_successful_predictions.tsv.gz	outcome	Combined structural-confidence category	str
+baseline_ranking_metrics_reproduced.tsv	ranking	L2 model or raw STRING score used to rank the training interactions	str
+baseline_ranking_metrics_reproduced.tsv	average_precision	Average precision against the liberal-confidence labels	float64
+baseline_ranking_metrics_reproduced.tsv	auroc	Area under the receiver-operating-characteristic curve	float64
+paper_pfam38_2_retrospective_benchmark.tsv	pfam_id	Stable Pfam accession	str
+paper_pfam38_2_retrospective_benchmark.tsv	pfam38_0_name	Pfam 38.0 short name	str
+paper_pfam38_2_retrospective_benchmark.tsv	pfam38_0_description	Pfam 38.0 description	str
+paper_pfam38_2_retrospective_benchmark.tsv	pfam38_2_name	Pfam 38.2 short name	str
+paper_pfam38_2_retrospective_benchmark.tsv	pfam38_2_description	Pfam 38.2 description	str
+paper_pfam38_2_retrospective_benchmark.tsv	agreement_class	Manual classification as specific, broader process or no clear relationship	str
+paper_pfam38_2_retrospective_benchmark.tsv	evidence_summary	Reason for the manual agreement classification	str
+paper_pfam38_2_retrospective_benchmark.tsv	successful_pairs	Successfully modelled L2-screen pairs containing the family	int64
+paper_pfam38_2_retrospective_benchmark.tsv	liberal_pairs	Pairs meeting the liberal-confidence criterion	int64
+paper_pfam38_2_retrospective_benchmark.tsv	strict_pairs	Pairs meeting the strict-confidence criterion	int64
+paper_pfam38_2_retrospective_benchmark.tsv	duf_interacting_pairs	Pairs in which the mapped DUF met the domain buried-surface criterion	int64
+paper_pfam38_2_retrospective_benchmark.tsv	representative_partner_annotations	Up to four distinct partner annotations ordered by structural confidence	str
+paper_pfam38_2_retrospective_benchmark.tsv	partner_annotation_sources	Sources represented among the partner annotations	str
+paper_pfam38_2_retrospective_benchmark.tsv	representative_partner_architectures	Up to four distinct partner Pfam architectures ordered by structural confidence	str
+paper_supplementary_pfam38_2_comparison.tsv	pfam_id	Stable Pfam accession	str
+paper_supplementary_pfam38_2_comparison.tsv	pfam38_0_name	Former DUF name in Pfam 38.0	str
+paper_supplementary_pfam38_2_comparison.tsv	pfam38_2_name	Updated short name in Pfam 38.2	str
+paper_supplementary_pfam38_2_comparison.tsv	pfam38_2_description	Updated description in Pfam 38.2	str
+paper_supplementary_pfam38_2_comparison.tsv	agreement_class	Manual classification as specific, broader process or no clear relationship	str
+paper_supplementary_pfam38_2_comparison.tsv	evidence_summary	Concise partner-context evidence supporting the classification	str
+paper_supplementary_pfam38_2_comparison.tsv	successful_pairs	Successfully modelled L2-screen pairs containing the family	int64
+paper_supplementary_pfam38_2_comparison.tsv	liberal_pairs	Pairs meeting the liberal-confidence criterion	int64
+paper_supplementary_pfam38_2_comparison.tsv	strict_pairs	Pairs meeting the strict-confidence criterion	int64

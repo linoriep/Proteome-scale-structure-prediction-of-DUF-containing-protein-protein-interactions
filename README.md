@@ -1,15 +1,19 @@
 # Proteome-scale structure prediction of DUF-containing protein-protein interactions
 
+This repository contains the analysis code, model files, source tables, and
+figures associated with the manuscript. Predicted AlphaFold 3 structures are
+distributed separately through the data repository cited in the manuscript.
+
 ## Contents
 
-- `notebooks/0725_bioinformatics_advances_selected_final_figures.ipynb`: code-only final selected-figures notebook.
-- `src/dufppi/`: reusable model and figure code.
+- `src/dufppi/`: model and figure code.
 - `scripts/`: command-line figure generation, model fitting/scoring, and validation.
 - `data/predictions/`: successful prediction metadata and all candidate records.
-- `data/model/`: STRING900/taxa10 training data, out-of-fold predictions, coefficients, and fitted L2 pipeline.
+- `data/model/`: STRING >=900/taxa >=10 training data, out-of-fold predictions, coefficients, and fitted L2 pipeline.
 - `data/candidates/`: all-organism and L2-selected module tables.
 - `data/tables/`: source TSVs for the main and supplementary analyses.
 - `data/figure_sources/`: inputs for the DUF4130 and DUF5819 structure figure.
+- `data/structures/`: cofolded coordinate models for the two manuscript case studies.
 - `figures/`: generated PNG, PDF, and SVG outputs.
 - `metadata/`: data dictionary, provenance, manifest, and SHA-256 checksums.
 
@@ -18,7 +22,7 @@
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e '.[notebooks]'
+pip install -e .
 ```
 
 ## Reproduce figures
@@ -26,6 +30,18 @@ pip install -e '.[notebooks]'
 ```bash
 python scripts/generate_figures.py --release-root .
 ```
+
+## Reproduce the retrospective Pfam comparison
+
+```bash
+python scripts/compare_pfam_releases.py --release-root .
+```
+
+The script compares Pfam 38.0 DUF families in the final L2-model screen with
+Pfam 38.2 and writes a detailed source table and a concise 38-family
+supplementary table. Family names, partner annotations, and confidence counts
+are regenerated from the fixed Pfam releases and deposited prediction table;
+the partner-context agreement classes are manually curated.
 
 ## Refit and apply the L2 model
 
@@ -37,17 +53,26 @@ python scripts/score_modules.py \
   --output results/scored_modules.tsv.gz
 ```
 
-The class-weighted L2 output is an enrichment/ranking score, not a calibrated
+The class-weighted L2 output is a ranking score and not a calibrated
 interaction probability.
+
+## Data availability
+
+The complete set of predicted structures and associated metadata is available from
+[Zenodo record 21875362](https://zenodo.org/records/21875362). This repository
+contains the model implementation, code used for the analyses and figures, and
+the two cofolded case-study models shown in Figure 3.
 
 ## Validate
 
 ```bash
+python scripts/build_manifest.py --release-root .
 python scripts/validate_release.py --release-root .
 ```
 
-Validation checks cohort counts, required columns, model metrics, relative
-paths, structure-file exclusion, and checksums.
+The first command rebuilds the relative-path file manifest and SHA-256
+checksums. Validation checks cohort counts, model metrics, path portability,
+the expected case-study structure files, and the release manifest.
 
 ## Confidence definitions
 

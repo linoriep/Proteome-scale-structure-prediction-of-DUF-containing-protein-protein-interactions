@@ -1,0 +1,39 @@
+pfam_id	pfam38_0_name	pfam38_2_name	pfam38_2_description	agreement_class	evidence_summary	successful_pairs	liberal_pairs	strict_pairs
+PF01345	DUF11	CLIPPER	CLIPPER domain	broader process	Type IX secretion and cell-envelope partners are consistent with an envelope-associated context but do not define CLIPPER function.	44	16	7
+PF01732	Mycop_pep_DUF31	Myco_protease	Mycoplasma immunoglobulin protease	specific	Immunoglobulin-binding and immunoglobulin-blocking partners are consistent with a Mycoplasma immunoglobulin protease system.	9	3	3
+PF02594	DUF167	PF1765-like	PF1765 protein family	no clear relationship	The observed partners do not indicate a specific relationship to the PF1765-like family assignment.	10	1	0
+PF04685	DUF608	GH116_catalytic	Glycosyl-hydrolase family 116, catalytic region	specific	Beta-glucosidase and GH116-containing partners are consistent with the GH116 catalytic-region assignment.	10	5	3
+PF06075	DUF936	CORD_N	CORD, N-terminal domain	no clear relationship	The single partner does not indicate a relationship to the CORD N-terminal assignment.	1	0	0
+PF06672	DUF1175	MagC	MagC peptidoglycan-binding NlpC/P60-like protein	broader process	Alpha-2-macroglobulin and YfaP-associated partners are consistent with a bacterial envelope or protease-defense system but not the specific MagC function.	4	2	1
+PF07849	DUF1641	HMP	Helical membrane plugin	broader process	Formate dehydrogenase and oxidoreductase partners are consistent with a membrane respiratory-complex context without defining the helical membrane plugin role.	11	5	0
+PF09836	DUF2063	HvfC_N	HvfC C-terminal domain	specific	BufA1- and MNIO-associated partners are consistent with the HvfC/BufC role in bufferin precursor modification.	7	2	1
+PF09906	DUF2135	YfaP_C	YfaP C-terminal domain	broader process	Alpha-2-macroglobulin and MagC partners are consistent with the same bacterial envelope or protease-defense system without defining YfaP function.	6	3	1
+PF09979	DUF2213	Pa193_gp24	Pa193 gp24 scaffolding protein	broader process	Phage structural and packaging partners indicate a phage-assembly context but do not specifically identify the gp24 scaffolding function.	12	2	0
+PF10022	DUF2264	BcGHD	Beta-D-glucuronate dehydratase family	no clear relationship	Predominantly self-annotations and ABC-transporter partners do not indicate beta-D-glucuronate dehydratase function.	20	3	2
+PF10048	DUF2282	BufA1	BufA1 family periplasmic bufferin-type metallophore	specific	HvfC/BufC-associated partners are consistent with BufA1 as a bufferin metallophore precursor.	4	1	0
+PF10240	DUF2464	MABP	MABP domain	specific	VPS37B, TSG101 and VPS28 partners place the domain in the ESCRT-I context associated with MABP/MVB12.	7	2	0
+PF10709	DUF2511	YebY	Protein YebY	specific	The YebZ partner places YebY in the named AZY copper-uptake system.	1	0	0
+PF11175	DUF2961	GH172_2nd	GH172 second beta-sandwich domain	broader process	Glycosyl hydrolase and carbohydrate-binding partners are consistent with carbohydrate processing without identifying the GH172 domain specifically.	5	0	0
+PF11816	DUF3337	Ubl_WDR48-Bun107	WDR48/Bun107, ubiquitin-like domain	specific	USP1 and Fanconi-pathway partners are consistent with the WDR48/Bun107 ubiquitin-associated context.	19	1	0
+PF11863	DUF3383	E217_gp31_N	E217 tail sheath protein gp31-like, N-terminal domain	broader process	Dit-like and other phage-tail partners indicate a tail-assembly context but do not specifically identify the gp31 N-terminal region.	15	0	0
+PF11958	DUF3472	BPSS1860	Surface attachment protein BPSS1860	broader process	An outer-membrane starch-binding partner is consistent with a surface-associated context without identifying BPSS1860 function.	1	0	0
+PF11984	DUF3485	EpsI	Methanolan biosynthesis EpsI	specific	Exosortase and TPR-rich partners are consistent with an extracellular-polysaccharide system associated with methanolan biosynthesis EpsI.	54	6	0
+PF12532	DUF3732	LmuB_C	LmuB C-terminal	no clear relationship	The diverse ABC and defense-associated partners do not indicate a specific relationship to LmuB.	4	2	1
+PF12996	DUF3880	YkvP_N	Spore protein YkvP, N-terminal domain	broader process	Cell-wall glycosyltransferase partners are consistent with an envelope-associated process without specifically identifying the spore protein YkvP.	5	0	0
+PF13835	DUF4194	JetB	Wadjet protein JetB	broader process	DNA-repair and defense-associated partners indicate an antiphage-defense context but do not specifically identify JetB.	10	2	0
+PF14092	DUF4270	BamH	BamH	no clear relationship	Galactose-oxidase and Kelch-repeat partners suggest a beta-propeller context, but no clear relationship to BamH was identified.	8	1	0
+PF14298	DUF4374	XusB	Xenosiderophore-binding lipoprotein XusB	specific	TonB-dependent iron-uptake receptors are consistent with the xenosiderophore-binding XusB assignment.	9	7	7
+PF14332	DUF4388	PatA_N	Protein PatA, N-terminal domain	broader process	GGDEF and response-regulator partners are consistent with a bacterial signaling context but do not specifically identify the PatA N-terminal domain.	161	12	4
+PF16090	DUF4819	Cic	Protein capicua homolog-like domain	specific	The Ataxin-1 partner is consistent with the known protein context of the capicua homolog Cic.	1	0	0
+PF16324	DUF4960	SGBP_levan-binding	SGBP, levan binding domain	specific	SusC(lev), SusD and beta-fructofuranosidase partners are consistent with a levan-utilization system.	6	1	1
+PF16332	DUF4962	DSE-like_N	Dermatan-sulfate epimerase-like, N-terminal	broader process	A heparinase partner is consistent with polysaccharide processing without establishing dermatan-sulfate epimerase activity.	8	1	0
+PF16472	DUF5050	LRP1-like_beta_prop	LRP1, beta-propeller domain	broader process	EGF-like and extracellular partners are consistent with an LRP-like architecture without identifying the beta-propeller's specific function.	13	3	1
+PF17270	DUF5336	MAP_0900	34 kDa antigenic protein	no clear relationship	No informative partner annotation was available for comparison with the 34 kDa antigenic-protein assignment.	1	0	0
+PF17384	DUF150_C	RimP_C	RimP C-terminal Sm-like domain	specific	Ribosomal-protein partners are consistent with the ribosome-assembly context of RimP.	37	2	0
+PF17825	DUF5587	SHOC1_ATPase	SHOC1 ATPase domain	no clear relationship	The only partner repeats the SHOC1 protein assignment and provides no independent functional context.	1	0	0
+PF19528	DUF6056	GT_STM0557_N	STM0557-like, N-terminal glycosyltransferase domain	specific	A phage glycosyltransferase partner is consistent with the glycosyltransferase-domain assignment.	5	2	1
+PF19557	DUF6079_1st	BrxC-PglY_N	BrxC/PglY, N-terminal domain	broader process	DNA methylase and ATPase partners indicate a defense-system context but do not distinguish BrxC from PglY.	20	5	0
+PF24346	DUF7507	CLIPPER_2	CLIPPER 2 domain	broader process	Type IX secretion and CLIPPER-containing partners indicate the expected cell-surface context but do not specifically establish CLIPPER 2 function.	7	3	2
+PF25372	DUF7885	LRR_FBXL15	F-box/LRR-repeat protein 15, leucine rich repeat domain	specific	SKP1 and cyclin-associated partners are consistent with an F-box/LRR protein context.	31	5	1
+PF26062	DUF8022	PccX	Propionyl-CoA carboxylase, PccX subunit	specific	A propionyl-CoA carboxylase carboxyltransferase partner is consistent with the PccX assignment.	1	0	0
+PF26607	DUF8189	Beta-prop_PLL	PLL-like beta propeller	no clear relationship	The varied phage and defense-associated partners do not establish a relationship to the PLL-like beta-propeller assignment.	10	1	1
