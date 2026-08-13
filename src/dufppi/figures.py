@@ -25,7 +25,7 @@ FUNCTION_COLORS = dict(zip(FUNCTION_ORDER, ["#2A6F97", "#D17B24", "#6A994E", "#8
 
 def configure() -> None:
     plt.rcParams.update({
-        "figure.dpi": 120, "savefig.dpi": 600, "font.size": 9,
+        "figure.dpi": 120, "savefig.dpi": 800, "font.size": 9,
         "axes.titlesize": 10, "axes.labelsize": 9, "legend.fontsize": 8,
         "axes.spines.top": False, "axes.spines.right": False,
         "pdf.fonttype": 42, "svg.fonttype": "none",
@@ -110,9 +110,11 @@ def overview(root: Path) -> None:
         x = np.arange(len(data)); width = .34
         ax.bar(x-width/2, data.liberal_fraction, width, color=LIBERAL, label="Liberal"); ax.bar(x+width/2, data.strict_fraction, width, color=STRICT, label="Strict")
         names = [f"{getattr(row, xlabel)}\nn={int(row.n):,}" for row in data.itertuples()]
-        ax.set_xticks(x, names, rotation=20 if xlabel == "score_bin" else 0, ha="right" if xlabel == "score_bin" else "center"); ax.set_ylabel("Fraction within group"); ax.yaxis.set_major_formatter(PercentFormatter(1)); ax.set_title(title, loc="left", fontweight="bold"); ax.legend(frameon=False)
+        rotation = 32 if xlabel == "score_bin" else 0
+        font_size = 7.5 if xlabel == "score_bin" else 9
+        ax.set_xticks(x, names, rotation=rotation, ha="right" if xlabel == "score_bin" else "center", fontsize=font_size); ax.set_ylabel("Fraction within group"); ax.yaxis.set_major_formatter(PercentFormatter(1)); ax.set_title(title, loc="left", fontweight="bold"); ax.legend(frameon=False)
     fig.tight_layout(rect=[0, .04, 1, 1])
-    save(fig, root / "figures", "figure_1_cohort_overview")
+    save(fig, root / "figures", "figure_2_cohort_overview")
 
 
 def locus_distance(root: Path) -> None:
@@ -132,7 +134,7 @@ def locus_distance(root: Path) -> None:
     axes[0, 0].set_ylabel("Fraction of successfully predicted pairs"); axes[1, 0].set_ylabel("Fraction of successfully predicted pairs")
     fig.suptitle("Structural-confidence yield by locus-tag distance", fontweight="bold", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, .96])
-    save(fig, root / "figures", "figure_2_locus_distance")
+    save(fig, root / "figures", "figure_3_locus_distance")
 
 
 def case_studies(root: Path) -> None:
@@ -156,7 +158,7 @@ def case_studies(root: Path) -> None:
             ax.set_ylim(image.shape[0] + margin_y, -margin_y)
         ax.axis("off"); ax.text(0, heading_y, letter, transform=ax.transAxes, va="top", fontweight="bold", fontsize=12); ax.text(.08, heading_y, title, transform=ax.transAxes, va="top", fontweight="bold", fontsize=9)
     fig.text(.01, .73, "DUF4130", rotation=90, fontweight="bold"); fig.text(.01, .27, "DUF5819", rotation=90, fontweight="bold"); fig.tight_layout(rect=[.02, 0, 1, 1])
-    save(fig, root / "figures", "figure_3_case_studies")
+    save(fig, root / "figures", "figure_4_case_studies")
 
 
 def validation(root: Path) -> None:
