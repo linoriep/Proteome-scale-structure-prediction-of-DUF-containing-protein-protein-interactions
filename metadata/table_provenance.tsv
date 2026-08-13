@@ -1,0 +1,25 @@
+table	generator	primary_input
+paper_all_runs_taxa_recurrence_yield_to500.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz
+paper_cohort_summary_failure_excluded.tsv	deposited aggregate	data/predictions/all_candidates.tsv.gz and AFDB summary
+paper_duf_liberal_partner_multiplicity_bins.tsv	scripts/build_paper_tables.py	data/predictions/duf_annotation_rows.tsv.gz
+paper_duf_multiple_partner_thresholds.tsv	scripts/build_paper_tables.py	data/predictions/duf_annotation_rows.tsv.gz
+paper_exclusion_report.tsv	deposited normalization audit	data/predictions/all_candidates.tsv.gz and source cohort tables
+paper_figure1_confidence_with_afdb.tsv	deposited aggregate	data/predictions/all_successful_predictions.tsv.gz and AFDB summary
+paper_final_l2_coefficients_with_definitions.tsv	scripts/train_l2_model.py plus channel definitions	data/model/training_labels_channels.tsv.gz
+paper_final_model_score_yield.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz
+paper_gene_distance_confidence_yield.tsv	scripts/analyze_gene_distance.py	data/predictions/all_successful_predictions.tsv.gz and data/external/protein_locations.tsv
+paper_gene_distance_parse_summary.tsv	scripts/analyze_gene_distance.py	data/predictions/all_successful_predictions.tsv.gz and data/external/protein_locations.tsv
+paper_network_summary.tsv	deposited aggregate	data/predictions/duf_annotation_rows.tsv.gz
+paper_partner_function_category_rules.tsv	analysis definition	manual ordered regular expressions
+paper_partner_function_cohort_composition_liberal.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz
+paper_partner_function_confident_composition.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz
+paper_partner_function_duf_family_coverage.tsv	scripts/build_paper_tables.py	data/predictions/duf_annotation_rows.tsv.gz
+paper_pfam38_2_retrospective_benchmark.tsv	scripts/compare_pfam_releases.py	data/predictions/all_successful_predictions.tsv.gz and Pfam 38.0/38.2
+paper_run_summary.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz and data/predictions/duf_annotation_rows.tsv.gz
+paper_separate_channel_l2_class_weight_sensitivity.tsv	scripts/analyze_model_sensitivity.py; historical rank-overlap columns used the original module universe	data/model/training_labels_channels.tsv.gz and data/candidates/all_organism_duf_modules.tsv.gz
+paper_separate_channel_training_sensitivity_string900.tsv	deposited model analysis	data/model/training_labels_channels.tsv.gz
+paper_string700_taxa50_sensitivity_summary.tsv	paper_run_summary.tsv subset	data/predictions/all_successful_predictions.tsv.gz
+paper_string_all_channels_score_bin_confidence.tsv	scripts/analyze_model_sensitivity.py	data/candidates/all_organism_duf_modules.tsv.gz and L2 prediction labels
+paper_string_all_channels_score_bin_strict_confidence.tsv	scripts/analyze_model_sensitivity.py	data/candidates/all_organism_duf_modules.tsv.gz and L2 prediction labels
+paper_supplementary_pfam38_2_comparison.tsv	scripts/compare_pfam_releases.py	data/predictions/all_successful_predictions.tsv.gz and Pfam 38.0/38.2
+paper_taxonomic_domain_summary.tsv	scripts/build_paper_tables.py	data/predictions/all_successful_predictions.tsv.gz and data/external/taxonomy.tsv

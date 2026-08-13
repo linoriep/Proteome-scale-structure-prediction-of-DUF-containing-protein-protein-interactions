@@ -43,6 +43,12 @@ def main() -> None:
     assert int(specific.strict_pairs.gt(0).sum()) == 7
     pfam_supplement = pd.read_csv(root / "data/tables/paper_supplementary_pfam38_2_comparison.tsv", sep="\t")
     assert len(pfam_supplement) == 38
+    external = pd.read_csv(root / "metadata/external_inputs.tsv", sep="\t")
+    for relative in external["path"]:
+        assert (root / relative).is_file(), relative
+    table_provenance = pd.read_csv(root / "metadata/table_provenance.tsv", sep="\t")
+    deposited_tables = {path.name for path in (root / "data/tables").glob("*.tsv")}
+    assert deposited_tables == set(table_provenance["table"])
     structure_files = {
         path.relative_to(root).as_posix()
         for path in root.rglob("*")

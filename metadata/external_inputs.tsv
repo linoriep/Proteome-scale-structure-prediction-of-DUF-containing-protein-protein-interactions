@@ -1,0 +1,9 @@
+path	source	release	purpose
+data/external/string_links.tsv	STRING full scored links	STRING 12.0	Association evidence used for cohort construction
+data/external/pfam_hits.tsv	PfamScan assignments for STRING proteins	Pfam 38.0	Protein architectures and DUF assignments
+data/external/pfam_families.tsv	Pfam family names and DUF status	Pfam 38.0	DUF identification
+data/external/string_pfam_edges.tsv	STRING full scored links joined to Pfam-A assignments	STRING 12.0; Pfam 38.0	Cohort construction and representative-pair selection
+data/external/prediction_metrics.tsv	AlphaFold 3 output scored with AlphaJudge ipSAE and domain buried-surface analysis	AlphaFold 3	Prediction consolidation and confidence classification
+data/external/protein_locations.tsv	Genome annotations matched to STRING protein identifiers	STRING 12.0 source genomes	Gene-distance analysis
+data/external/taxonomy.tsv	NCBI taxonomy identifiers and cellular domains	STRING 12.0 taxonomy mapping	Taxonomic-domain summary
+data/external/afdb_summary.tsv	AlphaFold Database heterodimer summary	AFDB heterodimer release used in the paper	AFDB comparison rows in cohort tables
