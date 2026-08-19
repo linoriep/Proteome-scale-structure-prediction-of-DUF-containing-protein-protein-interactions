@@ -38,7 +38,7 @@ python scripts/compare_pfam_releases.py --release-root .
 ```
 
 The script compares Pfam 38.0 DUF families in the final L2-model screen with
-Pfam 38.2 and writes a detailed source table and a concise 38-family
+Pfam 38.2 and writes a source table and a 38-family
 supplementary table. Family names, partner annotations, and confidence counts
 are regenerated from the fixed Pfam releases and deposited prediction table;
 the partner-context agreement classes are manually curated.
@@ -52,9 +52,6 @@ python scripts/score_modules.py \
   --input data/candidates/all_organism_duf_modules.tsv.gz \
   --output results/scored_modules.tsv.gz
 ```
-
-The class-weighted L2 output is a ranking score and not a calibrated
-interaction probability.
 
 ## Data availability
 
