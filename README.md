@@ -59,7 +59,7 @@ interaction probability.
 ## Data availability
 
 The complete set of predicted structures and associated metadata is available from
-[Zenodo record 21875362](https://zenodo.org/records/21875362). This repository
+[Zenodo](https://doi.org/10.5281/zenodo.21875362). This repository
 contains the model implementation, code used for the analyses and figures, and
 the two cofolded case-study models shown in Figure 4.
 

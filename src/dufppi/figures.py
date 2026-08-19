@@ -8,10 +8,9 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from matplotlib.ticker import PercentFormatter
-from sklearn.metrics import precision_recall_curve, roc_curve
 
 ORDER = ["STRING >=900, taxa >=10", "STRING >=700, taxa >=50", "Fusion-supported", "L2 model"]
-SHORT = dict(zip(ORDER, ["STRING900 / taxa10", "STRING700 / taxa50", "Fusion-supported", "L2 model\nscore >=0.50"]))
+SHORT = dict(zip(ORDER, ["STRING ≥900/taxa ≥10", "STRING ≥700/taxa ≥50", "Fusion-supported", "L2 model\nscore ≥0.50"]))
 COLORS = dict(zip(ORDER, ["#2676B8", "#8B5A9E", "#D17B24", "#33865A"]))
 LIBERAL = "#33865A"
 STRICT = "#4E5964"
@@ -47,10 +46,12 @@ def overview(root: Path) -> None:
         for column in ("liberal_high_confidence", "strict_high_confidence"):
             frame[column] = frame[column].astype(str).str.lower().eq("true")
     confidence = pd.read_csv(tables / "paper_figure1_confidence_with_afdb.tsv", sep="\t")
-    confidence.loc[confidence.cohort.eq("L2 model"), "label"] = "L2 model\nscore >=0.50"
+    confidence.loc[confidence.cohort.eq("STRING >=900, taxa >=10"), "label"] = "STRING ≥900/taxa ≥10"
+    confidence.loc[confidence.cohort.eq("STRING >=700, taxa >=50"), "label"] = "STRING ≥700/taxa ≥50"
+    confidence.loc[confidence.cohort.eq("L2 model"), "label"] = "L2 model\nscore ≥0.50"
     subset = predictions[predictions.cohort.eq("L2 model") & pd.to_numeric(predictions.model_score, errors="coerce").ge(0.75)]
     confidence = pd.concat([confidence, pd.DataFrame([{
-        "cohort": "L2 model >=0.75", "label": "L2 model\nscore >=0.75", "n": len(subset),
+        "cohort": "L2 model >=0.75", "label": "L2 model\nscore ≥0.75", "n": len(subset),
         "liberal": int(subset.liberal_high_confidence.sum()), "strict": int(subset.strict_high_confidence.sum()),
         "liberal_fraction": subset.liberal_high_confidence.mean(), "strict_fraction": subset.strict_high_confidence.mean(),
     }])], ignore_index=True)
@@ -106,7 +107,7 @@ def overview(root: Path) -> None:
         values = composition[category].to_numpy(); function_ax.barh(np.arange(len(ORDER)), values, left=left, color=FUNCTION_COLORS[category], label=category); left += values
     function_ax.set_yticks(np.arange(len(ORDER)), [SHORT[item] for item in ORDER]); function_ax.invert_yaxis(); function_ax.set_xlim(0, 1); function_ax.xaxis.set_major_formatter(PercentFormatter(1)); function_ax.set_xlabel("Fraction of liberal-confidence complexes"); function_ax.set_title("D  Partner-function composition", loc="left", fontweight="bold"); function_ax.legend(ncol=3, frameon=False, loc="upper center", bbox_to_anchor=(.5, -.20))
 
-    for ax, data, title, xlabel in [(domain_ax, domains, "E  Yield by taxonomic domain (L2 score >=0.50)", "domain"), (score_ax, score, "G  Structural yield by L2 score", "score_bin")]:
+    for ax, data, title, xlabel in [(domain_ax, domains, "E  Yield by taxonomic domain", "domain"), (score_ax, score, "G  Structural yield by L2 score", "score_bin")]:
         x = np.arange(len(data)); width = .34
         ax.bar(x-width/2, data.liberal_fraction, width, color=LIBERAL, label="Liberal"); ax.bar(x+width/2, data.strict_fraction, width, color=STRICT, label="Strict")
         names = [f"{getattr(row, xlabel)}\nn={int(row.n):,}" for row in data.itertuples()]
@@ -161,30 +162,32 @@ def case_studies(root: Path) -> None:
     save(fig, root / "figures", "figure_4_case_studies")
 
 
-def validation(root: Path) -> None:
-    data = pd.read_csv(root / "data/model/oof_predictions.tsv.gz", sep="\t")
-    labels = pd.to_numeric(data.liberal_high_confidence).astype(int); scores = pd.to_numeric(data.l2_model_score)
-    precision, recall, _ = precision_recall_curve(labels, scores); fpr, tpr, _ = roc_curve(labels, scores)
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.6))
-    axes[0].plot(recall, precision, color="#0072B2", lw=2); axes[0].axhline(labels.mean(), color="#6C757D", ls="--"); axes[0].set(xlabel="Recall", ylabel="Precision", xlim=(0, 1), ylim=(0, 1))
-    axes[1].plot(fpr, tpr, color="#0072B2", lw=2); axes[1].plot([0, 1], [0, 1], color="#6C757D", ls="--"); axes[1].set(xlabel="False-positive rate", ylabel="True-positive rate", xlim=(0, 1), ylim=(0, 1))
-    fig.tight_layout(); save(fig, root / "figures", "figure_S_l2_validation")
-
-
-def evidence_channels(root: Path, strict: bool = False) -> None:
-    filename = "paper_string_all_channels_score_bin_strict_confidence.tsv" if strict else "paper_string_all_channels_score_bin_confidence.tsv"
-    data = pd.read_csv(root / "data/tables" / filename, sep="\t")
-    fraction_column = "strict_fraction" if strict else "liberal_fraction"
+def evidence_channels(root: Path) -> None:
+    liberal = pd.read_csv(root / "data/tables/paper_string_all_channels_score_bin_confidence.tsv", sep="\t")
+    strict = pd.read_csv(root / "data/tables/paper_string_all_channels_score_bin_strict_confidence.tsv", sep="\t")
+    keys = ["channel", "score_bin", "source_column"]
+    data = liberal.merge(
+        strict[keys + ["n", "strict_fraction"]], on=keys, validate="one_to_one", suffixes=("", "_strict")
+    )
+    if not data["n"].equals(data["n_strict"]):
+        raise ValueError("Liberal and strict channel tables use different candidate counts")
     channels = list(dict.fromkeys(data.channel))
     fig, axes = plt.subplots(4, 4, figsize=(15.4, 13)); axes = axes.ravel()
-    for ax, channel in zip(axes, channels):
+    for index, (ax, channel) in enumerate(zip(axes, channels)):
         part = data[data.channel.eq(channel)].copy(); x = np.arange(len(part))
-        ax.bar(x, part.n, color="#8095A5"); ax.set_yscale("log"); ax.set_title(channel, loc="left", fontweight="bold"); ax.set_xticks(x[::2], part.score_bin.astype(str).iloc[::2], rotation=45, ha="right", fontsize=6)
-        twin = ax.twinx(); twin.plot(x, part[fraction_column], "o-", color="#238B57", ms=3); twin.set_ylim(0, 1); twin.yaxis.set_major_formatter(PercentFormatter(1))
+        ax.bar(x, part.n, color="#8095A5"); ax.set_yscale("log"); ax.set_ylim(1, 20000); ax.set_yticks([10, 100, 1000, 10000]); ax.set_title(channel, loc="left", fontweight="bold"); ax.set_xticks(x[::2], part.score_bin.astype(str).iloc[::2], rotation=45, ha="right", fontsize=6)
+        twin = ax.twinx()
+        twin.plot(x, part.liberal_fraction, "o-", color=LIBERAL, ms=3)
+        twin.plot(x, part.strict_fraction, "o-", color=STRICT, ms=3)
+        twin.set_ylim(0, 1); twin.set_yticks([0, .5, 1]); twin.yaxis.set_major_formatter(PercentFormatter(1))
+        if index == 0:
+            ax.set_ylabel("Candidate count (log scale)")
+            ax.set_xlabel("STRING combined score interval")
+            twin.set_ylabel("Confidence fraction", rotation=270, labelpad=14)
     for ax in axes[len(channels):]: ax.axis("off")
-    fig.legend(handles=[Patch(color="#8095A5", label="Candidate count"), Line2D([0], [0], color="#238B57", marker="o", label=f"{'Strict' if strict else 'Liberal'} fraction")], ncol=2, frameon=False, loc="upper center")
-    fig.tight_layout(rect=[0, .02, 1, .96]); save(fig, root / "figures", f"figure_S_string_channels_{'strict' if strict else 'liberal'}")
+    fig.legend(handles=[Patch(color="#8095A5", label="Candidate count"), Line2D([0], [0], color=LIBERAL, marker="o", label="Liberal confidence fraction"), Line2D([0], [0], color=STRICT, marker="o", label="Strict confidence fraction")], ncol=3, frameon=False, loc="upper center")
+    fig.tight_layout(rect=[0, .02, 1, .96]); save(fig, root / "figures", "figure_S1_string_channels_confidence")
 
 
 def generate_all(root: str | Path) -> None:
-    root = Path(root).resolve(); configure(); overview(root); locus_distance(root); case_studies(root); validation(root); evidence_channels(root); evidence_channels(root, strict=True)
+    root = Path(root).resolve(); configure(); overview(root); locus_distance(root); case_studies(root); evidence_channels(root)

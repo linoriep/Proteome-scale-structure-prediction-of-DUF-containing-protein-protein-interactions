@@ -1,8 +1,8 @@
 cohort	organisms	candidates_successful_structures	technical_failures_excluded	successful_structures_without_interface_score	liberal_n	liberal_percent	strict_n	strict_percent	unique_duf_families	duf_families_with_liberal_member	duf_families_with_strict_member	all_structures_with_interacting_duf	liberal_structures_with_interacting_duf	strict_structures_with_interacting_duf	liberal_structures_with_interacting_duf_percent_of_liberal	duf_bsa_result_status	liberal_duf_models_bsa_processed	strict_duf_models_bsa_processed	liberal_interacting_percent_of_bsa_processed	strict_interacting_percent_of_bsa_processed
 AFDB heterodimer all	46 proteomes*	7594897	0		230792	3.038777221073571	62877	0.8278848284578448	1218	321	80		421	94	0.18241533502027799	partial_local_subset_lower_bound	1073.0	216.0	39.23578751164958	43.51851851851852
 AFDB heterodimer DUF-containing	46 proteomes*	212084	0		2992	1.410761773636861	791	0.3729654287923652	1218	321	80		421	94	14.070855614973262	partial_local_subset_lower_bound	1073.0	216.0	39.23578751164958	43.51851851851852
-STRING >=900, taxa10	Bacteria in STRING	4520	3	247.0	614	13.584070796460177	325	7.1902654867256635	969	405	245	2686.0	421	241	68.56677524429968					
-STRING >=700, taxa50	Bacteria in STRING	4017	0	197.0	385	9.584266865820263	194	4.829474732387354	832	292	163	2347.0	276	141	71.68831168831169					
+STRING ≥900/taxa ≥10	Bacteria in STRING	4520	3	247.0	614	13.584070796460177	325	7.1902654867256635	969	405	245	2686.0	421	241	68.56677524429968					
+STRING ≥700/taxa ≥50	Bacteria in STRING	4017	0	197.0	385	9.584266865820263	194	4.829474732387354	832	292	163	2347.0	276	141	71.68831168831169					
 Fusion-supported	Bacteria in STRING	2135	0	36.0	120	5.620608899297424	59	2.7634660421545667	416	76	46	1088.0	49	22	40.833333333333336					
 L2 >=0.5, STRING >=900	All STRING organisms	14993	91	381.0	2593	17.29473754418729	1387	9.25098379243647	2439	1156	779	8122.0	1558	880	60.08484381025839					
 L2 >=0.75, STRING >=900	All STRING organisms	4340	9	89.0	1116	25.714285714285715	658	15.161290322580646	1428	676	475	2426.0	652	406	58.422939068100355					

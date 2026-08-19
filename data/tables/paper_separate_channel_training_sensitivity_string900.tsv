@@ -1,8 +1,8 @@
 Training configuration	AP	AUROC
-L2 STRING >=900/taxa >=10 only	0.3716	0.8003
-L2 STRING >=900/taxa >=10 + STRING >=700/taxa >=50	0.3855	0.8021
-L2 STRING >=900/taxa >=10 + AFDB	0.3406	0.7871
-XGBoost STRING >=900/taxa >=10 only	0.4002	0.8042
+L2 STRING ≥900/taxa ≥10 only	0.3716	0.8003
+L2 STRING ≥900/taxa ≥10 + STRING ≥700/taxa ≥50	0.3855	0.8021
+L2 STRING ≥900/taxa ≥10 + AFDB	0.3406	0.7871
+XGBoost STRING ≥900/taxa ≥10 only	0.4002	0.8042
 Combined STRING score baseline	0.1419	0.5245
 Neighborhood score baseline	0.2440	0.7373
 Co-occurrence score baseline	0.3163	0.7806

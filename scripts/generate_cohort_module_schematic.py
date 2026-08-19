@@ -51,8 +51,9 @@ def arrow(ax, start, end, *, color=None, width=1.2, style="-") -> None:
     ax.add_patch(patch)
 
 
-def cohort_box(ax, x, y, color, number, lines, *, heading_size=8.4, body_size=7.6) -> None:
-    width, height = 0.415, 0.148
+def cohort_box(ax, x, y, color, number, lines, *, heading_size=8.4, body_size=7.6,
+               height=0.156) -> None:
+    width = 0.415
     box = FancyBboxPatch(
         (x, y),
         width,
@@ -103,6 +104,7 @@ def build_figure() -> plt.Figure:
         ax.set_xlim(0, 1)
         ax.set_ylim(0.10, 1)
         ax.axis("off")
+    left.set_ylim(-0.02, 1)
     right.set_xlim(0, 0.90)
 
     left.text(0.055, 0.980, "Selection of the four prediction cohorts", fontsize=10,
@@ -114,29 +116,30 @@ def build_figure() -> plt.Figure:
         facecolor="#F1F3F4", edgecolor=COLORS["neutral"], linewidth=1.0, zorder=3,
     )
     left.add_patch(source)
-    left.text(0.49, 0.885, "STRING v12.0 associations involving DUF-containing proteins",
+    left.text(0.49, 0.893, "STRING v12.0 associations involving DUF-containing proteins",
               ha="center", va="center", fontsize=8.2, fontweight="bold", zorder=4)
-    left.text(0.49, 0.858, "Pfam 38.0 architectures assigned and recurrence counted across distinct taxa",
+    left.text(0.49, 0.866, "Pfam 38.0 architectures assigned and pair recurrence counted across taxa",
               ha="center", va="center", fontsize=7.2, color=COLORS["neutral"], zorder=4)
 
     cohort_box(left, 0.06, 0.605, COLORS["cohort_1"], 1,
                ["STRING ≥900/taxa ≥10", "Bacterial STRING interactions",
-                "Combined score ≥900", "Modules containing pairs from ≥10 taxa", "Number of predictions: 4,523"],
+                "STRING combined score ≥900", "Modules containing pairs from ≥10 taxa", "Number of predictions: 4,523"],
                body_size=7.2)
     cohort_box(left, 0.54, 0.605, COLORS["cohort_2"], 2,
                ["STRING ≥700/taxa ≥50", "Bacterial STRING interactions",
-                "Combined score ≥700", "Modules containing pairs from ≥50 taxa", "Number of predictions: 4,017"],
+                "STRING combined score ≥700", "Modules containing pairs from ≥50 taxa", "Number of predictions: 4,017"],
                body_size=7.2)
     cohort_box(left, 0.06, 0.382, COLORS["cohort_3"], 3,
                ["Fusion-supported", "Bacterial STRING interactions",
-                "Fusion score >1", "Modules containing pairs from ≥5 taxa",
+                "STRING fusion-channel score >1", "Modules containing pairs from ≥5 taxa",
                 "Number of predictions: 2,135"],
-               body_size=7.1)
+               body_size=7.1, height=0.172)
     cohort_box(left, 0.54, 0.382, COLORS["cohort_4"], 4,
-               ["L2-model selected", "Logistic regression", "Trained on cohort 1",
-                "All 12,535 STRING organisms", "Combined score ≥900, L2 score ≥0.5",
+               ["L2-model", "L2-logistic regression selected", "Trained on cohort 1",
+                "All 12,535 STRING organisms", "STRING combined score ≥900",
+                "Modules with L2 score ≥0.5",
                 "Number of predictions: 12,374"],
-               heading_size=8.1, body_size=7.1)
+               heading_size=8.1, body_size=6.6, height=0.172)
 
     cohort_group = FancyBboxPatch(
         (0.025, 0.360), 0.955, 0.415,
@@ -148,16 +151,32 @@ def build_figure() -> plt.Figure:
     arrow(left, (0.49, 0.825), (0.49, 0.786), color=COLORS["line"], width=1.0)
 
     selection = FancyBboxPatch(
-        (0.16, 0.155), 0.66, 0.10,
-        boxstyle="round,pad=0.008,rounding_size=0.01",
-        facecolor="white", edgecolor=COLORS["neutral"], linewidth=1.0,
+        (0.16, 0.245), 0.66, 0.055,
+        boxstyle="round,pad=0.005,rounding_size=0.01",
+        facecolor="#F1F3F4", edgecolor=COLORS["neutral"], linewidth=1.0,
     )
     left.add_patch(selection)
-    left.text(0.49, 0.220, "One protein pair selected per module",
+    left.text(0.49, 0.2725, "One protein pair selected per module",
               ha="center", va="center", fontsize=8.2, fontweight="bold")
-    left.text(0.49, 0.183, "AlphaFold 3 complex prediction and AlphaJudge analysis",
-              ha="center", va="center", fontsize=7.4, color=COLORS["neutral"])
-    arrow(left, (0.49, 0.322), (0.49, 0.268), color=COLORS["line"], width=1.0)
+    analysis = FancyBboxPatch(
+        (0.16, 0.135), 0.66, 0.055,
+        boxstyle="round,pad=0.005,rounding_size=0.01",
+        facecolor="#F1F3F4", edgecolor=COLORS["neutral"], linewidth=1.0,
+    )
+    left.add_patch(analysis)
+    left.text(0.49, 0.1625, "AlphaFold 3 complex prediction and AlphaJudge analysis",
+              ha="center", va="center", fontsize=8.0, fontweight="bold")
+    annotation = FancyBboxPatch(
+        (0.16, 0.025), 0.66, 0.055,
+        boxstyle="round,pad=0.005,rounding_size=0.01",
+        facecolor="#F1F3F4", edgecolor=COLORS["neutral"], linewidth=1.0,
+    )
+    left.add_patch(annotation)
+    left.text(0.49, 0.0525, "Buried surface area and partner-function analysis",
+              ha="center", va="center", fontsize=7.8, fontweight="bold")
+    arrow(left, (0.49, 0.338), (0.49, 0.306), color=COLORS["line"], width=1.0)
+    arrow(left, (0.49, 0.228), (0.49, 0.196), color=COLORS["line"], width=1.0)
+    arrow(left, (0.49, 0.118), (0.49, 0.086), color=COLORS["line"], width=1.0)
     right.text(0.040, 0.980, "Definition of a module", fontsize=10,
                fontweight="bold", va="top")
     right.text(0.040, 0.925,
@@ -193,16 +212,16 @@ def build_figure() -> plt.Figure:
                fontsize=7.3, color=COLORS["neutral"], fontweight="bold")
 
     arrow(right, (0.445, 0.41), (0.445, 0.335), color=COLORS["line"])
-    right.text(0.445, 0.305, "Representative pair selected by cohort-specific ranking",
+    right.text(0.445, 0.320, "Protein pair for prediction selected by cohort-specific ranking",
                ha="center", va="center", fontsize=8.2, fontweight="bold")
-    right.text(0.445, 0.273,
+    right.text(0.445, 0.285,
                "Cohorts 1/2: highest combined STRING score   |   Cohort 3: highest fusion score",
                ha="center", va="center", fontsize=7.0, color=COLORS["neutral"])
-    right.text(0.445, 0.246,
+    right.text(0.445, 0.258,
                "Cohort 4: highest combined STRING score among L2-selected pairs",
                ha="center", va="center", fontsize=7.0, color=COLORS["neutral"])
-    protein(right, 0.17, 0.17, [(0.18, 0.64, COLORS["duf"], "DUF-X")], width=0.25, height=0.030)
-    protein(right, 0.4625, 0.17,
+    protein(right, 0.17, 0.182, [(0.18, 0.64, COLORS["duf"], "DUF-X")], width=0.25, height=0.030)
+    protein(right, 0.4625, 0.182,
             [(0.065, 0.40, COLORS["pfam_a"], "PF-A"),
              (0.515, 0.42, COLORS["pfam_b"], "PF-B")], width=0.275, height=0.030)
 
@@ -211,7 +230,8 @@ def build_figure() -> plt.Figure:
         position = ax.get_position()
         letter_y = position.y0 + 0.985 * position.height - 0.004
         ax.set_position([position.x0, position.y0 - 0.003, position.width, position.height])
-        fig.text(position.x0, letter_y, label, fontsize=12, fontweight="bold", va="top")
+        letter_x = position.x0 - (0.009 if label == "B" else 0)
+        fig.text(letter_x, letter_y, label, fontsize=12, fontweight="bold", va="top")
     return fig
 
 
